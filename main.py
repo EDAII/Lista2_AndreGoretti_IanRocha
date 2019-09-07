@@ -1,210 +1,236 @@
 from tkinter import *
 from functions import *
+from tkinter import ttk
 
-window = Tk()
- 
-window.title("Agenda")
- 
-window.geometry('470x550')
- 
-lblN = Label(window, text="Nome")
- 
-lblN.place(x = 1, y = 15)
+# s=ttk.Style()
+# s.theme_use('clam')
 
-lblA = Label(window, text="Idade")
+
  
-lblA.place(x = 1, y = 40)
+def abrirBusca():
 
-lblC = Label(window, text="Cidade")
-
-lblC.place(x = 1, y = 70)
- 
-EntradaN = Entry(window,width=10)
- 
-EntradaN.place(x = 50, y = 15)
-
-EntradaA = Entry(window,width=10)
- 
-EntradaA.place(x = 50, y = 40)
-
-EntradaC = Entry(window,width=10)
-
-EntradaC.place(x = 50, y = 70)   
-
-def clickedN():
-     Contato.delete('1.0', END)
-     Contato.config(state="normal")
-     Nome = EntradaN.get()
-     
-     i = 0
-     while(i <= 50):
-         
-         if person[i] == Nome:
+   def clickedN():
+      ContatoBusca.config(state="normal")
+      ContatoBusca.delete('1.0', END)
+      Nome = EntradaN.get()
+      
+      i = 0
+      while(i <= 50):
             
-            Contato.insert(INSERT, "--------------------")
-            Contato.insert(INSERT, "\n ")
-            Contato.insert(INSERT, "Nome: ")
-            Contato.insert(INSERT, person[i])
-            Contato.insert(INSERT, "\n ")
+            if person[i] == Nome:
+               
+               ContatoBusca.insert(INSERT, "--------------------")
+               ContatoBusca.insert(INSERT, "\n ")
+               ContatoBusca.insert(INSERT, "Nome: ")
+               ContatoBusca.insert(INSERT, person[i])
+               ContatoBusca.insert(INSERT, "\n ")
 
-            Contato.insert(INSERT, "CPF: ")
-            Contato.insert(INSERT, cpf[i])
-            Contato.insert(INSERT, "\n ")
+               ContatoBusca.insert(INSERT, "CPF: ")
+               ContatoBusca.insert(INSERT, cpf[i])
+               ContatoBusca.insert(INSERT, "\n ")
 
-            Contato.insert(INSERT, "idade: ")
-            Contato.insert(INSERT, age[i])
-            Contato.insert(INSERT, "\n ") 
+               ContatoBusca.insert(INSERT, "idade: ")
+               ContatoBusca.insert(INSERT, age[i])
+               ContatoBusca.insert(INSERT, "\n ") 
 
-            Contato.insert(INSERT, "Cidade: ")
-            Contato.insert(INSERT, city[i])
-            Contato.insert(INSERT, "\n ") 
+               ContatoBusca.insert(INSERT, "Cidade: ")
+               ContatoBusca.insert(INSERT, city[i])
+               ContatoBusca.insert(INSERT, "\n ") 
 
-            Contato.insert(INSERT, "Numero Telefone: ")
-            Contato.insert(INSERT, tel[i])
-            Contato.insert(INSERT, "\n ") 
+               ContatoBusca.insert(INSERT, "Numero Telefone: ")
+               ContatoBusca.insert(INSERT, tel[i])
+               ContatoBusca.insert(INSERT, "\n ") 
 
-            Contato.insert(INSERT, "Nascimento: ")
-            Contato.insert(INSERT, date[i])
-            Contato.insert(INSERT, "\n")
-         i += 1                   
+               ContatoBusca.insert(INSERT, "Nascimento: ")
+               ContatoBusca.insert(INSERT, date[i])
+               ContatoBusca.insert(INSERT, "\n")
+            i += 1       
 
-    #Contato.insert(INSERT, )
+      ContatoBusca.config(state="disabled")                  
 
-def clickedA():
+      #ContatoBusca.insert(INSERT, )
 
-     Contato.delete('1.0', END)
+   def clickedA():
 
-     Contato.config(state="normal")
+      ContatoBusca.config(state="normal")
+      ContatoBusca.delete('1.0', END)
+      AgeB = int(EntradaA.get())
+      j = 0
+      while(j <= 50):
+            if age[j] == AgeB:
+               ContatoBusca.insert(INSERT, "--------------------")
+               ContatoBusca.insert(INSERT, "\n ")
+               ContatoBusca.insert(INSERT, "Nome: ")
+               ContatoBusca.insert(INSERT, person[j])
+               ContatoBusca.insert(INSERT, "\n ")
 
-     AgeB = int(EntradaA.get())
+               ContatoBusca.insert(INSERT, "CPF: ")
+               ContatoBusca.insert(INSERT, cpf[j])
+               ContatoBusca.insert(INSERT, "\n ")
+
+               ContatoBusca.insert(INSERT, "idade: ")
+               ContatoBusca.insert(INSERT, age[j])
+               ContatoBusca.insert(INSERT, "\n ") 
+
+               ContatoBusca.insert(INSERT, "Cidade: ")
+               ContatoBusca.insert(INSERT, city[j])
+               ContatoBusca.insert(INSERT, "\n ") 
+
+               ContatoBusca.insert(INSERT, "Numero Telefone: ")
+               ContatoBusca.insert(INSERT, tel[j])
+               ContatoBusca.insert(INSERT, "\n ") 
+
+               ContatoBusca.insert(INSERT, "Nascimento: ")
+               ContatoBusca.insert(INSERT, date[j])
+               ContatoBusca.insert(INSERT, "\n")
+            j += 1
+
+      ContatoBusca.config(state="disabled")      
+
+   def clickedC():
+
+      ContatoBusca.config(state="normal")
+      ContatoBusca.delete('1.0', END)
+      Cidade = EntradaC.get()
+      j = 0
+      while(j <= 50):
+            
+            if Cidade == city[j]:
+               ContatoBusca.insert(INSERT, "--------------------")
+               ContatoBusca.insert(INSERT, "\n ")
+               ContatoBusca.insert(INSERT, "Nome: ")
+               ContatoBusca.insert(INSERT, person[j])
+               ContatoBusca.insert(INSERT, "\n ")
+
+               ContatoBusca.insert(INSERT, "CPF: ")
+               ContatoBusca.insert(INSERT, cpf[j])
+               ContatoBusca.insert(INSERT, "\n ")
+
+               ContatoBusca.insert(INSERT, "idade: ")
+               ContatoBusca.insert(INSERT, age[j])
+               ContatoBusca.insert(INSERT, "\n ") 
+
+               ContatoBusca.insert(INSERT, "Cidade: ")
+               ContatoBusca.insert(INSERT, city[j])
+               ContatoBusca.insert(INSERT, "\n ") 
+
+               ContatoBusca.insert(INSERT, "Numero Telefone: ")
+               ContatoBusca.insert(INSERT, tel[j])
+               ContatoBusca.insert(INSERT, "\n ") 
+
+               ContatoBusca.insert(INSERT, "Nascimento: ")
+               ContatoBusca.insert(INSERT, date[j])
+               ContatoBusca.insert(INSERT, "\n")
+            j += 1   
      
-     j = 0
-     while(j <= 50):
-         
-         if age[j] == AgeB:
-            Contato.insert(INSERT, "--------------------")
-            Contato.insert(INSERT, "\n ")
-            Contato.insert(INSERT, "Nome: ")
-            Contato.insert(INSERT, person[j])
-            Contato.insert(INSERT, "\n ")
+      ContatoBusca.config(state="disabled")
 
-            Contato.insert(INSERT, "CPF: ")
-            Contato.insert(INSERT, cpf[j])
-            Contato.insert(INSERT, "\n ")
+   janelaBusca = Toplevel()
+   janelaBusca.geometry('470x550')
 
-            Contato.insert(INSERT, "idade: ")
-            Contato.insert(INSERT, age[j])
-            Contato.insert(INSERT, "\n ") 
+   lblN = Label(janelaBusca, text="Nome")
+   lblN.place(x = 1, y = 15)
 
-            Contato.insert(INSERT, "Cidade: ")
-            Contato.insert(INSERT, city[j])
-            Contato.insert(INSERT, "\n ") 
+   lblA = Label(janelaBusca, text="Idade")
+   lblA.place(x = 1, y = 40)
 
-            Contato.insert(INSERT, "Numero Telefone: ")
-            Contato.insert(INSERT, tel[j])
-            Contato.insert(INSERT, "\n ") 
+   lblC = Label(janelaBusca, text="Cidade")
+   lblC.place(x = 1, y = 70)
+   
+   EntradaN = Entry(janelaBusca,width=10)
+   EntradaN.place(x = 50, y = 15)
 
-            Contato.insert(INSERT, "Nascimento: ")
-            Contato.insert(INSERT, date[j])
-            Contato.insert(INSERT, "\n")
-         j += 1
+   EntradaA = Entry(janelaBusca,width=10)
+   EntradaA.place(x = 50, y = 40)
 
-def clickedC():
+   EntradaC = Entry(janelaBusca,width=10)
+   EntradaC.place(x = 50, y = 70)   
 
-     Contato.delete('1.0', END)
+   ContatoBusca = Text(janelaBusca, width = 30, height = 30)
+   ContatoBusca.place(x = 220, y = 0)
+   ContatoBusca.config(state="disabled")
 
-     Contato.config(state="normal")
+   btnNome = Button(janelaBusca, text="Buscar", command=clickedN)
+   btnAge = Button(janelaBusca, text="Buscar", command=clickedA)
+   
+   btnCity = Button(janelaBusca, text="Buscar", command=clickedC)
 
-     Cidade = EntradaC.get()
-     
-     j = 0
-     while(j <= 50):
-         
-         if Cidade == city[j]:
-            Contato.insert(INSERT, "--------------------")
-            Contato.insert(INSERT, "\n ")
-            Contato.insert(INSERT, "Nome: ")
-            Contato.insert(INSERT, person[j])
-            Contato.insert(INSERT, "\n ")
+   btnAge.place(x = 140, y = 40)
+   btnNome.place(x = 140, y = 10)
+   
+   btnCity.place(x = 140, y = 70)
 
-            Contato.insert(INSERT, "CPF: ")
-            Contato.insert(INSERT, cpf[j])
-            Contato.insert(INSERT, "\n ")
+   btnClose = Button(janelaBusca, text="Fechar", command=janelaBusca.destroy)
+   btnClose.place(x = 100, y = 500)     
 
-            Contato.insert(INSERT, "idade: ")
-            Contato.insert(INSERT, age[j])
-            Contato.insert(INSERT, "\n ") 
 
-            Contato.insert(INSERT, "Cidade: ")
-            Contato.insert(INSERT, city[j])
-            Contato.insert(INSERT, "\n ") 
-
-            Contato.insert(INSERT, "Numero Telefone: ")
-            Contato.insert(INSERT, tel[j])
-            Contato.insert(INSERT, "\n ") 
-
-            Contato.insert(INSERT, "Nascimento: ")
-            Contato.insert(INSERT, date[j])
-            Contato.insert(INSERT, "\n")
-         j += 1        
 
 def clickedG():
 
-    Contato.delete('1.0', END)
+   ContatoPrin.delete('1.0', END)
+   ContatoPrin.config(state="normal")
 
-    Contato.config(state="normal")
+   
+   j = 0
+   while(j <= 50):
 
-     
-    j = 0
-    while(j <= 50):
+      ContatoPrin.insert(INSERT, "--------------------") 
+      ContatoPrin.insert(INSERT, "\n ")      
+      ContatoPrin.insert(INSERT, "Nome: ")
+      ContatoPrin.insert(INSERT, person[j])
+      ContatoPrin.insert(INSERT, "\n ")
 
-        Contato.insert(INSERT, "--------------------") 
-        Contato.insert(INSERT, "\n ")      
-        Contato.insert(INSERT, "Nome: ")
-        Contato.insert(INSERT, person[j])
-        Contato.insert(INSERT, "\n ")
+      ContatoPrin.insert(INSERT, "CPF: ")
+      ContatoPrin.insert(INSERT, cpf[j])
+      ContatoPrin.insert(INSERT, "\n ")
 
-        Contato.insert(INSERT, "CPF: ")
-        Contato.insert(INSERT, cpf[j])
-        Contato.insert(INSERT, "\n ")
+      ContatoPrin.insert(INSERT, "idade: ")
+      ContatoPrin.insert(INSERT, age[j])
+      ContatoPrin.insert(INSERT, "\n ") 
 
-        Contato.insert(INSERT, "idade: ")
-        Contato.insert(INSERT, age[j])
-        Contato.insert(INSERT, "\n ") 
+      ContatoPrin.insert(INSERT, "Cidade: ")
+      ContatoPrin.insert(INSERT, city[j])
+      ContatoPrin.insert(INSERT, "\n ") 
 
-        Contato.insert(INSERT, "Cidade: ")
-        Contato.insert(INSERT, city[j])
-        Contato.insert(INSERT, "\n ") 
+      ContatoPrin.insert(INSERT, "Numero Telefone: ")
+      ContatoPrin.insert(INSERT, tel[j])
+      ContatoPrin.insert(INSERT, "\n ") 
 
-        Contato.insert(INSERT, "Numero Telefone: ")
-        Contato.insert(INSERT, tel[j])
-        Contato.insert(INSERT, "\n ") 
+      ContatoPrin.insert(INSERT, "Nascimento: ")
+      ContatoPrin.insert(INSERT, date[j])
+      ContatoPrin.insert(INSERT, "\n")
+      j += 1
 
-        Contato.insert(INSERT, "Nascimento: ")
-        Contato.insert(INSERT, date[j])
-        Contato.insert(INSERT, "\n")
-        j += 1
+   ContatoPrin.config(state="disabled")    
+   
+   
+
+   
+
+window1 = Tk()
+
+window1.title("Agenda")
  
-btnNome = Button(window, text="Buscar", command=clickedN)
+window1.geometry('470x550')
 
-btnAge = Button(window, text="Buscar", command=clickedA)
+ContatoPrin = Text(window1, width = 30, height = 30)
+ContatoPrin.place(x = 220, y = 0)
+ContatoPrin.config(state="disabled")
 
-btnGeral = Button(window, text="Listar Todos Contatos", command=clickedG)
+clickedG()
 
-btnCity = Button(window, text="Buscar", command=clickedC)
 
-btnAge.place(x = 140, y = 40)
+btnBusca = Button(window1, text="Buscas", command=abrirBusca)
+btnBusca.place(relx = 0.25, rely = 0.3, anchor = CENTER)
+
+btnOrdenaidade = Button(window1, text="Ordenar por Idade",) #command=ordenaIdade)      
+btnOrdenaidade.place(relx = 0.25, rely = 0.5, anchor = CENTER)
+
+btnOrdenaNome = Button(window1, text="Ordenar por Nome",) #command=ordenaNome)      
+btnOrdenaNome.place(relx = 0.25, rely = 0.6, anchor = CENTER)
+
+btnOrdenacidade = Button(window1, text="Ordenar por Cidade",) #command=ordenacidade)      
+btnOrdenacidade.place(relx = 0.25, rely = 0.7, anchor = CENTER)
+
  
-btnNome.place(x = 140, y = 10)
-
-btnGeral.place(x = 26, y = 430)
-
-btnCity.place(x = 140, y = 70)
-
-Contato = Text(window, width = 30, height = 30)
-
-Contato.place(x = 220, y = 0)
-
-Contato.config(state="disabled")
- 
-window.mainloop()
+window1.mainloop()
