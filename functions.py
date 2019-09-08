@@ -59,20 +59,35 @@ for k in range(51):
     tel.append(random_tel())
     city.append(random_city())
 
-# def selection_sort():
-#     for i in range(51):
-#         min = i
-#         for index in (i+1, 51):
-#             if person[min] > person[index]:
-#                 min = j
+def selection_sort():
+    for i in range(len(age)):
+        minimum = i
+        for index in (i+1, len(age)):
+            if age[minimum] > age[index]:
+                minimum = j
+
+        aux = age[index]
+        age[index] = age[minimum]
+        age[minimum] = aux
+        
 
 def bubble_sort():
     unsorted = True
     while unsorted:
         unsorted = False
-        for i in range(50):
+        for i in range(len(person)):
             if person[i] > person[i+1]:
                 aux = person[i+1]
                 person[i+1] = person[i]
                 person[i] = aux
-                unsorted = True 
+                unsorted = True
+
+def insertion_sort():
+    for i in range (len(city)):
+        if i > 0:
+            j = i
+            while j != 0 and (city[j] < city[j-1]):
+                aux = city[j];
+                city[j] = city[j - 1]
+                city[j - 1] = aux
+                j -= j
