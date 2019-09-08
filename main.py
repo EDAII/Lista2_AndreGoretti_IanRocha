@@ -1,8 +1,7 @@
 from tkinter import *
 from functions import *
-from tkinter import ttk
 
-# s=ttk.Style()
+# s=Style()
 # s.theme_use('clam')
 
 
@@ -129,39 +128,39 @@ def abrirBusca():
    janelaBusca = Toplevel()
    janelaBusca.geometry('480x550')
 
-   lblN = ttk.Label(janelaBusca, text="Nome")
+   lblN = Label(janelaBusca, text="Nome")
    lblN.place(x = 1, y = 15)
 
-   lblA = ttk.Label(janelaBusca, text="Idade")
+   lblA = Label(janelaBusca, text="Idade")
    lblA.place(x = 1, y = 40)
 
-   lblC = ttk.Label(janelaBusca, text="Cidade")
+   lblC = Label(janelaBusca, text="Cidade")
    lblC.place(x = 1, y = 70)
    
-   EntradaN = ttk.Entry(janelaBusca,width=10)
+   EntradaN = Entry(janelaBusca,width=10)
    EntradaN.place(x = 50, y = 15)
 
-   EntradaA = ttk.Entry(janelaBusca,width=10)
+   EntradaA = Entry(janelaBusca,width=10)
    EntradaA.place(x = 50, y = 40)
 
-   EntradaC = ttk.Entry(janelaBusca,width=10)
+   EntradaC = Entry(janelaBusca,width=10)
    EntradaC.place(x = 50, y = 70)   
 
    ContatoBusca = Text(janelaBusca, width = 30, height = 30)
    ContatoBusca.place(x = 230, y = 0)
    ContatoBusca.config(state="disabled")
 
-   btnNome = ttk.Button(janelaBusca, text="Buscar", command=clickedN)
-   btnAge = ttk.Button(janelaBusca, text="Buscar", command=clickedA)
+   btnNome = Button(janelaBusca, text="Buscar", command=clickedN)
+   btnAge = Button(janelaBusca, text="Buscar", command=clickedA)
    
-   btnCity = ttk.Button(janelaBusca, text="Buscar", command=clickedC)
+   btnCity = Button(janelaBusca, text="Buscar", command=clickedC)
 
    btnAge.place(x = 140, y = 40)
    btnNome.place(x = 140, y = 10)
    
    btnCity.place(x = 140, y = 70)
 
-   btnClose = ttk.Button(janelaBusca, text="Fechar", command=janelaBusca.destroy)
+   btnClose = Button(janelaBusca, text="Fechar", command=janelaBusca.destroy)
    btnClose.place(x = 100, y = 500)     
 
 
@@ -335,9 +334,6 @@ window1.title("Agenda")
  
 window1.geometry('470x550')
 
-s=ttk.Style()
-s.theme_use()
-
 ContatoPrin = Text(window1, width = 30, height = 30)
 ContatoPrin.place(relx = 0.72, rely = 0.5, anchor = CENTER)
 ContatoPrin.config(state="disabled")
@@ -345,16 +341,16 @@ ContatoPrin.config(state="disabled")
 openList()
 
 
-btnBusca = ttk.Button(window1, text="Buscas", command=abrirBusca)
+btnBusca = Button(window1, text="Buscas", command=abrirBusca)
 btnBusca.place(relx = 0.25, rely = 0.3, anchor = CENTER)
 
-btnOrdenaidade = ttk.Button(window1, text="Ordenar por Idade", command = clickedIdade)      
+btnOrdenaidade = Button(window1, text="Ordenar por Idade", command = clickedIdade)      
 btnOrdenaidade.place(relx = 0.25, rely = 0.5, anchor = CENTER)
 
-btnOrdenaNome = ttk.Button(window1, text="Ordenar por Nome", command=clickedNome)      
+btnOrdenaNome = Button(window1, text="Ordenar por Nome", command=clickedNome)      
 btnOrdenaNome.place(relx = 0.25, rely = 0.6, anchor = CENTER)
 
-btnOrdenacidade = ttk.Button(window1, text="Ordenar por Cidade", command=clickedCidade)      
+btnOrdenacidade = Button(window1, text="Ordenar por Cidade", command=clickedCidade)      
 btnOrdenacidade.place(relx = 0.25, rely = 0.7, anchor = CENTER)
 
  
