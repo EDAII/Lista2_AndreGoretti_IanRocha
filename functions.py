@@ -61,35 +61,34 @@ for k in range(51):
 
 #Ordering by age
 def selection_sort():
-    print("entrou")
     for i in range(len(age)):
         minimum = i
         for index in range(i+1, len(age)):
             if age[minimum] > age[index]:
                 minimum = index
 
-        aux = age[index]
-        age[index] = age[minimum]
+        aux = age[i]
+        age[i] = age[minimum]
         age[minimum] = aux
         #
-        aux = person[index]
-        person[index] = person[minimum]
+        aux = person[i]
+        person[i] = person[minimum]
         person[minimum] = aux
         #
-        aux = city[index]
-        city[index] = city[minimum]
+        aux = city[i]
+        city[i] = city[minimum]
         city[minimum] = aux
         #
-        aux = date[index]
-        date[index] = date[minimum]
+        aux = date[i]
+        date[i] = date[minimum]
         date[minimum] = aux
         #
-        aux = cpf[index]
-        cpf[index] = cpf[minimum]
+        aux = cpf[i]
+        cpf[i] = cpf[minimum]
         cpf[minimum] = aux
         #
-        aux = tel[index]
-        tel[index] = tel[minimum]
+        aux = tel[i]
+        tel[i] = tel[minimum]
         tel[minimum] = aux
         
 #Ordering by Name
