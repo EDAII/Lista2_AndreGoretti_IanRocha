@@ -152,4 +152,4 @@ def insertion_sort():
                 aux = cpf[j]
                 cpf[j] = cpf[j - 1]
                 cpf[j - 1] = aux
-                j -= j
+                j -= 1
