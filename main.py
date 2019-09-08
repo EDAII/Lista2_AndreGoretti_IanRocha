@@ -166,7 +166,7 @@ def abrirBusca():
 
 
 
-def clickedG():
+def openList():
 
    ContatoPrin.delete('1.0', END)
    ContatoPrin.config(state="normal")
@@ -244,6 +244,86 @@ def clickedIdade():
       j += 1
 
    ContatoPrin.config(state="disabled")      
+
+def clickedNome():
+
+   bubble_sort()
+
+   ContatoPrin.config(state="normal")
+   ContatoPrin.delete('1.0', END)
+
+   
+   j = 0
+   while(j <= 50):
+
+      ContatoPrin.insert(INSERT, "--------------------") 
+      ContatoPrin.insert(INSERT, "\n ")      
+      ContatoPrin.insert(INSERT, "Nome: ")
+      ContatoPrin.insert(INSERT, person[j])
+      ContatoPrin.insert(INSERT, "\n ")
+
+      ContatoPrin.insert(INSERT, "CPF: ")
+      ContatoPrin.insert(INSERT, cpf[j])
+      ContatoPrin.insert(INSERT, "\n ")
+
+      ContatoPrin.insert(INSERT, "idade: ")
+      ContatoPrin.insert(INSERT, age[j])
+      ContatoPrin.insert(INSERT, "\n ") 
+
+      ContatoPrin.insert(INSERT, "Cidade: ")
+      ContatoPrin.insert(INSERT, city[j])
+      ContatoPrin.insert(INSERT, "\n ") 
+
+      ContatoPrin.insert(INSERT, "Numero Telefone: ")
+      ContatoPrin.insert(INSERT, tel[j])
+      ContatoPrin.insert(INSERT, "\n ") 
+
+      ContatoPrin.insert(INSERT, "Nascimento: ")
+      ContatoPrin.insert(INSERT, date[j])
+      ContatoPrin.insert(INSERT, "\n")
+      j += 1
+
+   ContatoPrin.config(state="disabled")  
+
+def clickedCidade():
+
+   insertion_sort()
+
+   ContatoPrin.config(state="normal")
+   ContatoPrin.delete('1.0', END)
+
+   
+   j = 0
+   while(j <= 50):
+
+      ContatoPrin.insert(INSERT, "--------------------") 
+      ContatoPrin.insert(INSERT, "\n ")      
+      ContatoPrin.insert(INSERT, "Nome: ")
+      ContatoPrin.insert(INSERT, person[j])
+      ContatoPrin.insert(INSERT, "\n ")
+
+      ContatoPrin.insert(INSERT, "CPF: ")
+      ContatoPrin.insert(INSERT, cpf[j])
+      ContatoPrin.insert(INSERT, "\n ")
+
+      ContatoPrin.insert(INSERT, "idade: ")
+      ContatoPrin.insert(INSERT, age[j])
+      ContatoPrin.insert(INSERT, "\n ") 
+
+      ContatoPrin.insert(INSERT, "Cidade: ")
+      ContatoPrin.insert(INSERT, city[j])
+      ContatoPrin.insert(INSERT, "\n ") 
+
+      ContatoPrin.insert(INSERT, "Numero Telefone: ")
+      ContatoPrin.insert(INSERT, tel[j])
+      ContatoPrin.insert(INSERT, "\n ") 
+
+      ContatoPrin.insert(INSERT, "Nascimento: ")
+      ContatoPrin.insert(INSERT, date[j])
+      ContatoPrin.insert(INSERT, "\n")
+      j += 1
+
+   ContatoPrin.config(state="disabled")            
    
    
 
@@ -262,7 +342,7 @@ ContatoPrin = Text(window1, width = 30, height = 30)
 ContatoPrin.place(relx = 0.72, rely = 0.5, anchor = CENTER)
 ContatoPrin.config(state="disabled")
 
-clickedG()
+openList()
 
 
 btnBusca = ttk.Button(window1, text="Buscas", command=abrirBusca)
@@ -271,10 +351,10 @@ btnBusca.place(relx = 0.25, rely = 0.3, anchor = CENTER)
 btnOrdenaidade = ttk.Button(window1, text="Ordenar por Idade", command = clickedIdade)      
 btnOrdenaidade.place(relx = 0.25, rely = 0.5, anchor = CENTER)
 
-btnOrdenaNome = ttk.Button(window1, text="Ordenar por Nome",) #command=ordenaNome)      
+btnOrdenaNome = ttk.Button(window1, text="Ordenar por Nome", command=clickedNome)      
 btnOrdenaNome.place(relx = 0.25, rely = 0.6, anchor = CENTER)
 
-btnOrdenacidade = ttk.Button(window1, text="Ordenar por Cidade",) #command=ordenacidade)      
+btnOrdenacidade = ttk.Button(window1, text="Ordenar por Cidade", command=clickedCidade)      
 btnOrdenacidade.place(relx = 0.25, rely = 0.7, anchor = CENTER)
 
  

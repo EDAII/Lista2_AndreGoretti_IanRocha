@@ -96,7 +96,7 @@ def bubble_sort():
     unsorted = True
     while unsorted:
         unsorted = False
-        for i in range(len(person)):
+        for i in range(len(person)-1):
             if person[i] > person[i+1]:
                 aux = person[i+1]
                 person[i+1] = person[i]
@@ -129,27 +129,27 @@ def insertion_sort():
         if i > 0:
             j = i
             while j != 0 and (city[j] < city[j-1]):
-                aux = city[j];
+                aux = city[j]
                 city[j] = city[j - 1]
                 city[j - 1] = aux
                 #
-                aux = person[j];
+                aux = person[j]
                 person[j] = person[j - 1]
                 person[j - 1] = aux
                 #
-                aux = age[j];
+                aux = age[j]
                 age[j] = age[j - 1]
                 age[j - 1] = aux
                 #
-                aux = tel[j];
+                aux = tel[j]
                 tel[j] = tel[j - 1]
                 tel[j - 1] = aux
                 #
-                aux = date[j];
+                aux = date[j]
                 date[j] = date[j - 1]
                 date[j - 1] = aux
                 #
-                aux = cpf[j];
+                aux = cpf[j]
                 cpf[j] = cpf[j - 1]
                 cpf[j - 1] = aux
                 j -= j
