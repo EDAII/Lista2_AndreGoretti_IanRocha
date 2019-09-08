@@ -61,6 +61,7 @@ for k in range(51):
 
 #Ordering by age
 def selection_sort():
+    print("entrou")
     for i in range(len(age)):
         minimum = i
         for index in range(i+1, len(age)):
