@@ -63,7 +63,7 @@ for k in range(51):
 def selection_sort():
     for i in range(len(age)):
         minimum = i
-        for index in (i+1, len(age)):
+        for index in range(i+1, len(age)):
             if age[minimum] > age[index]:
                 minimum = index
 

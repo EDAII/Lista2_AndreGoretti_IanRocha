@@ -227,7 +227,7 @@ clickedG()
 btnBusca = ttk.Button(window1, text="Buscas", command=abrirBusca)
 btnBusca.place(relx = 0.25, rely = 0.3, anchor = CENTER)
 
-btnOrdenaidade = ttk.Button(window1, text="Ordenar por Idade",) #command=ordenaIdade)      
+btnOrdenaidade = ttk.Button(window1, text="Ordenar por Idade", command = selection_sort())      
 btnOrdenaidade.place(relx = 0.25, rely = 0.5, anchor = CENTER)
 
 btnOrdenaNome = ttk.Button(window1, text="Ordenar por Nome",) #command=ordenaNome)      
