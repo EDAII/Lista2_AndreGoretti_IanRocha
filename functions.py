@@ -59,18 +59,39 @@ for k in range(51):
     tel.append(random_tel())
     city.append(random_city())
 
+#Ordering by age
 def selection_sort():
     for i in range(len(age)):
         minimum = i
         for index in (i+1, len(age)):
             if age[minimum] > age[index]:
-                minimum = j
+                minimum = index
 
         aux = age[index]
         age[index] = age[minimum]
         age[minimum] = aux
+        #
+        aux = person[index]
+        person[index] = person[minimum]
+        person[minimum] = aux
+        #
+        aux = city[index]
+        city[index] = city[minimum]
+        city[minimum] = aux
+        #
+        aux = date[index]
+        date[index] = date[minimum]
+        date[minimum] = aux
+        #
+        aux = cpf[index]
+        cpf[index] = cpf[minimum]
+        cpf[minimum] = aux
+        #
+        aux = tel[index]
+        tel[index] = tel[minimum]
+        tel[minimum] = aux
         
-
+#Ordering by Name
 def bubble_sort():
     unsorted = True
     while unsorted:
@@ -80,8 +101,29 @@ def bubble_sort():
                 aux = person[i+1]
                 person[i+1] = person[i]
                 person[i] = aux
+                #
+                aux = age[i+1]
+                age[i+1] = age[i]
+                age[i] = aux
+                #
+                aux = city[i+1]
+                city[i+1] = city[i]
+                city[i] = aux
+                #
+                aux = tel[i+1]
+                tel[i+1] = tel[i]
+                tel[i] = aux
+                #
+                aux = cpf[i+1]
+                cpf[i+1] = cpf[i]
+                cpf[i] = aux
+                #
+                aux = date[i+1]
+                date[i+1] = date[i]
+                date[i] = aux
                 unsorted = True
 
+#Ordering by City
 def insertion_sort():
     for i in range (len(city)):
         if i > 0:
@@ -90,4 +132,24 @@ def insertion_sort():
                 aux = city[j];
                 city[j] = city[j - 1]
                 city[j - 1] = aux
+                #
+                aux = person[j];
+                person[j] = person[j - 1]
+                person[j - 1] = aux
+                #
+                aux = age[j];
+                age[j] = age[j - 1]
+                age[j - 1] = aux
+                #
+                aux = tel[j];
+                tel[j] = tel[j - 1]
+                tel[j - 1] = aux
+                #
+                aux = date[j];
+                date[j] = date[j - 1]
+                date[j - 1] = aux
+                #
+                aux = cpf[j];
+                cpf[j] = cpf[j - 1]
+                cpf[j - 1] = aux
                 j -= j
